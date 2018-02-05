@@ -15,6 +15,8 @@ const {
 
 require('dotenv').config();
 
+console.log(moment().format('H:mm'), 'timezone');
+
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
 bot.start((ctx) => {
