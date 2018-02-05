@@ -1,0 +1,24 @@
+{
+  "name": "if-weather",
+  "version": "1.0.0",
+  "description": "Telegram chatbot for showing weather in Ivano-Frankivsk by selected schedule",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Andrian Poberezhnyk",
+  "license": "ISC",
+  "dependencies": {
+    "dark-sky": "^1.1.2",
+    "dotenv": "^5.0.0",
+    "moment": "^2.20.1",
+    "mongoose": "^5.0.3",
+    "node-cron": "^1.2.1",
+    "telegraf": "^3.17.5"
+  },
+  "engines": {
+    "node": "8.9.1"
+  },
+  "license": "MIT"
+}
