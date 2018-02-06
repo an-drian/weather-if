@@ -1,10 +1,11 @@
 const moment = require('moment');
+const tz = require('moment-timezone');
 
 const getFormattedDate = (seconds) =>
-  moment(0).seconds(seconds).format('DD.MM.YYYY');
+  moment(0).tz('Europe/Kiev').seconds(seconds).format('DD.MM.YYYY');
 
 const getFormattedTime = (seconds) =>
-  moment(0).seconds(seconds).format('H:mm');
+  moment(0).tz('Europe/Kiev').seconds(seconds).format('H:mm');
 
 const calcPercent = (value, total, decimal, sign) => {
   const badNumbers = [NaN, Infinity, -Infinity];

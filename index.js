@@ -77,7 +77,6 @@ bot.hears(/(хуй|пизд|блят|бляд|сука|пізд|єба|їба|й
   ctx.reply('І ти тим ротом маму цілуєш? 😒');
 })
 
-
 bot.hears(/^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/, (ctx) => {
   const { first_name, id, last_name } = ctx.message.chat;
   User.findOne({ telegramUserId: id }, (error, userDoc) => {
