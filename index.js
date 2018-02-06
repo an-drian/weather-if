@@ -1,6 +1,7 @@
 const Telegraf = require('telegraf');
 const cron = require('node-cron');
 const moment = require('moment');
+const tz = require('moment-timezone');
 
 const { saveUser, User } = require('./db');
 const { getWeather, getCurrentWeather } = require('./weather'); 
@@ -12,6 +13,8 @@ const {
   formatWeatherString,
   formatCurrentWeather,
 } = require('./helpers');
+
+moment.tz.setDefault('Europe/Kyiv')
 
 require('dotenv').config();
 

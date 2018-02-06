@@ -8,17 +8,17 @@
     "start": "node index.js"
   },
   "author": "Andrian Poberezhnyk",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "dark-sky": "^1.1.2",
     "dotenv": "^5.0.0",
     "moment": "^2.20.1",
+    "moment-timezone": "^0.5.14",
     "mongoose": "^5.0.3",
     "node-cron": "^1.2.1",
     "telegraf": "^3.17.5"
   },
   "engines": {
     "node": "8.9.1"
-  },
-  "license": "MIT"
+  }
 }
