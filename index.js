@@ -14,11 +14,9 @@ const {
   formatCurrentWeather,
 } = require('./helpers');
 
-moment.tz.setDefault('Europe/Kyiv')
-
 require('dotenv').config();
 
-console.log(moment().format('H:mm'), 'timezone');
+console.log(moment().tz('Europe/Kiev').format('H:mm'), 'timezones');
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
@@ -35,7 +33,7 @@ bot.catch((error) => {
 });
 
 var task = cron.schedule('* * * * *', function() {
-  const date = moment();
+  const date = moment().tz('Europe/Kiev');
   console.log(date.format('H:mm'));
   User.find({ time: date.format('H:mm') }, (error, users) => {
     if (error) throw error;
@@ -67,10 +65,6 @@ bot.command('stop', (ctx) => {
 });
 
 bot.hears('Привіт', (ctx) => ctx.reply('Привіт!'));
-
-bot.hears('test', (ctx) => {
-  // bot.telegram.sendMessage(231630635, 'Ввесь мир тебя кружит!')
-});
 
 bot.hears('/current', (ctx) => {
   getCurrentWeather((result) => {
